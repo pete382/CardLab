@@ -1,0 +1,33 @@
+﻿@model DrawModel
+
+
+<table class= "table table-bordered" >
+   <tr>
+	   <th>Value</th>
+       <th>Suit</th>
+	   <th>Image</th>
+
+
+
+
+   </tr>
+    @{ 
+        @if(Model.remaining<4)
+        {<a asp-controller ="Cards" asp-action="Shuffle"> Shuffle Cards Again  </a>}
+
+
+        foreach(Card c in Model.cards)
+        {
+         <tr>
+             
+                <td>@c.value </td>
+                <td>@c.suit </td>
+                <td><img height = "100px" src = "@c.image"></td>
+               </tr>
+        }
+
+
+    }
+
+
+</table>
